@@ -1,28 +1,60 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title> CRUD Application </title>
-
-        <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
-        <link rel="shortcut icon" href="{{url_for('static', filename = 'teacher.png')}}">
-    </head>
-
+<head>
+    <title>CRUD Application</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='teacher.png') }}">
+</head>
 <body>
-<div class="container">
-    <div class= "well text-center">
-        <h1>Python Flask Crud Web Application Development</h1>
+    {% block body%}
+    <div class="container">
+        <div class="well text-center">
+            <h1>Python Flask Crud Web Application Development</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Student List 
+                        <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#mymodel">Add Student Data</button>
+                    </h2>
+                </div>
+            </div>
+            <!-- Start of the table -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Serial</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr> 
+                        <td>01</td>
+                        <td>kevin</td>
+                        <td>kjc47@njit.edu</td>
+                        <td>9890987</td>
+                        <td>
+                            <a href="" class= "btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit">Edit</a>
+                            <a href="" class= "btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete?')">Delete</a>
+                        </td>
+                    </thead>
+                <tbody>
+                    <!-- Table data will go here -->
+                </tbody>
+            </table>
+            <!-- End of the table -->
+            <div class="well">
+                <h3>Website: <a href="https://github.com/kjc47">https://github.com/kjc47</a>
+                    <span class="pull-right">Also <a href="https://github.com/nadzeyakuzmitch">https://github.com/nadzeyakuzmitch</a></span>
+                </h3>
+            </div>
+        </div>
+        
     </div>
-    <div class="well"
-<h3>Website: https://github.com/kjc47
-    <span class="pull-right">Also https://github.com/nadzeyakuzmitch </span>
     
-</h3>
-
-</div>
-
+    {% endblock%}
 </body>
-
-
-
-
-
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
 </html>
